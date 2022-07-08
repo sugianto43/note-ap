@@ -5,12 +5,12 @@
     <div class="card-item" v-for="(item, idx) in notes" :key="idx">
       <div class="time">{{ item.jam }}</div>
       <div class="title">{{ item.nama }}</div>
-      <div class="price">{{ item.pengeluaran }}</div>
+      <div class="price">{{ formatPrice(item.pengeluaran) }}</div>
     </div>
 
     <div class="total-price">
       <p>Total</p>
-      <p class="value-price">{{ totalPrice }}</p>
+      <p class="value-price">{{ formatPrice(totalPrice) }}</p>
     </div>
   </b-card>
 </template>
@@ -19,7 +19,7 @@
 export default {
   name: "CardItem",
   props: {
-    id: Number,
+    id: String,
     date: String,
     total: String,
     notes: {
@@ -33,6 +33,11 @@ export default {
         return a + b.pengeluaran;
       }, 0);
       return sum;
+    },
+  },
+  methods: {
+    formatPrice(value) {
+      return "Rp " + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
   },
 };

@@ -2,8 +2,8 @@
   <div id="app">
     <!-- HEADER COMPONENT -->
     <div class="header-title">
-      <p class="label">Diari Jajan Bulan Februari</p>
-      <p>Pengeluaran bulan ini Rp 5.605.475</p>
+      <p class="label">Diari Jajan Tahun 2022</p>
+      <p>Pengeluaran bulan ini {{ formatPrice(total) }}</p>
 
       <b-button variant="primary" @click="handleShowModal"
         >TAMBAH ITEM</b-button
@@ -48,7 +48,7 @@
 
 <script>
 import CardItem from "./components/CardItem.vue";
-// import { items } from "./data/index"
+import { uuid } from "vue-uuid";
 import { format } from "date-fns";
 
 export default {
@@ -62,6 +62,7 @@ export default {
       showModal: false,
       name: "",
       price: null,
+      total: null,
     };
   },
   watch: {
@@ -77,6 +78,18 @@ export default {
     this.fetchData();
   },
   methods: {
+    formatPrice(value) {
+      return "Rp " + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    },
+    totalCount(data) {
+      let result = 0;
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].detail.length; j++) {
+          result += data[i].detail[j].pengeluaran;
+        }
+      }
+      return result;
+    },
     handleShowModal() {
       this.showModal = !this.showModal;
       console.log("open");
@@ -97,31 +110,33 @@ export default {
           jam: time,
           tanggal: date,
           nama: this.name,
-          pengeluaran: this.price,
+          pengeluaran: Number(this.price),
         });
       } else {
-        // let newData = {
-        //   id: "3sdse2esds",
-        //   date: "15 Februari 2022",
-        //   detail: [
-        //     {
-        //       jam: "05:07",
-        //       tanggal: "12 Februari 2022",
-        //       nama: "Tahu Bulat",
-        //       pengeluaran: 85271,
-        //     },
-        //   ],
-        // };
-        // let copyData = this.data.reverse();
-        // this.data = [...copyData, newData].reverse();
+        let newData = {
+          id: uuid.v1(),
+          date: date,
+          detail: [
+            {
+              jam: time,
+              tanggal: date,
+              nama: this.name,
+              pengeluaran: Number(this.price),
+            },
+          ],
+        };
+        let copyData = this.data.reverse();
+        this.data = [...copyData, newData].reverse();
       }
+      this.total = this.totalCount(this.data);
+      this.showModal = false;
     },
     async fetchData() {
       let url = "http://localhost:3001/items";
       let res = await fetch(url);
       let result = await res.json();
-      console.log("response await", result);
       this.data = result.reverse();
+      this.total = this.totalCount(this.data);
     },
   },
 };

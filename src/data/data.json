@@ -1,6 +1,6 @@
 {"items":[
 {
-    "id": 1,
+    "id": "1",
     "date": "12 Februari 2022",
     "detail": [
         {
@@ -36,7 +36,7 @@
     ]
 },
 {
-    "id": 2,
+    "id": "2",
     "date": "13 Februari 2022",
     "detail": [
         {
@@ -84,7 +84,7 @@
     ]
 },
 {
-    "id": 3,
+    "id": "3",
     "date": "14 Februari 2022",
     "detail": [
         {
