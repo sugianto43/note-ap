@@ -1,0 +1,134 @@
+{"items":[
+{
+    "id": 1,
+    "date": "12 Februari 2022",
+    "detail": [
+        {
+            "jam": "05:07",
+            "tanggal":"12 Februari 2022",
+            "nama":"Tahu Bulat",
+            "pengeluaran":85271
+        },
+        {
+            "jam": "12:47",
+            "tanggal":"12 Februari 2022",
+            "nama":"Tahu Sumedang",
+            "pengeluaran":25607
+        },
+        {
+            "jam": "13:16",
+            "tanggal":"12 Februari 2022",
+            "nama":"Pepes Ikan",
+            "pengeluaran":72847
+        },
+        {
+            "jam": "21:00",
+            "tanggal":"12 Februari 2022",
+            "nama":"Nasi Timbel",
+            "pengeluaran":21668
+        },
+        {
+            "jam": "22:21",
+            "tanggal":"12 Februari 2022",
+            "nama":"Nasi Pecel",
+            "pengeluaran":56352
+        }
+    ]
+},
+{
+    "id": 2,
+    "date": "13 Februari 2022",
+    "detail": [
+        {
+            "jam": "07:07",
+            "tanggal":"13 Februari 2022",
+            "nama":"Kwetiau Rebus",
+            "pengeluaran":27279
+        },
+        {
+            "jam": "08:07",
+            "tanggal":"13 Februari 2022",
+            "nama":"Sop Ayam",
+            "pengeluaran":82158
+        },
+        {
+            "jam": "09:21",
+            "tanggal":"13 Februari 2022",
+            "nama":"Kwetiau Goreng",
+            "pengeluaran":16518
+        },
+        {
+            "jam": "16:36",
+            "tanggal":"13 Februari 2022",
+            "nama":"Ketoprak",
+            "pengeluaran":21889
+        },
+        {
+            "jam": "20:23",
+            "tanggal":"13 Februari 2022",
+            "nama":"Ayam Tangkap",
+            "pengeluaran":41763
+        },
+        {
+            "jam": "21:36",
+            "tanggal":"13 Februari 2022",
+            "nama":"Sayur Asem",
+            "pengeluaran":98258
+        },
+        {
+            "jam": "22:39",
+            "tanggal":"13 Februari 2022",
+            "nama":"Batagor",
+            "pengeluaran":12695
+        }
+    ]
+},
+{
+    "id": 3,
+    "date": "14 Februari 2022",
+    "detail": [
+        {
+            "jam": "07:07",
+            "tanggal":"14 Februari 2022",
+            "nama":"Kwetiau Rebus",
+            "pengeluaran":27279
+        },
+        {
+            "jam": "08:07",
+            "tanggal":"14 Februari 2022",
+            "nama":"Sop Ayam",
+            "pengeluaran":82158
+        },
+        {
+            "jam": "09:21",
+            "tanggal":"14 Februari 2022",
+            "nama":"Kwetiau Goreng",
+            "pengeluaran":16518
+        },
+        {
+            "jam": "16:36",
+            "tanggal":"14 Februari 2022",
+            "nama":"Ketoprak",
+            "pengeluaran":21889
+        },
+        {
+            "jam": "20:23",
+            "tanggal":"14 Februari 2022",
+            "nama":"Ayam Tangkap",
+            "pengeluaran":41763
+        },
+        {
+            "jam": "21:36",
+            "tanggal":"14 Februari 2022",
+            "nama":"Sayur Asem",
+            "pengeluaran":98258
+        },
+        {
+            "jam": "22:39",
+            "tanggal":"14 Februari 2022",
+            "nama":"Batagor",
+            "pengeluaran":12695
+        }
+    ]
+}
+]}

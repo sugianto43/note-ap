@@ -1,27 +1,16 @@
 <template>
   <b-card class="shadow-sm">
-    <h6 class="date">14 Februari</h6>
-    <div class="card-item">
-      <div class="time">09:20</div>
-      <div class="title">Ayam Goreng</div>
-      <div class="price">Rp 25.000</div>
-    </div>
+    <h6 class="date">{{ date }}</h6>
 
-    <div class="card-item">
-      <div class="time">09:20</div>
-      <div class="title">Ayam Goreng</div>
-      <div class="price">Rp 25.000</div>
-    </div>
-
-    <div class="card-item">
-      <div class="time">09:20</div>
-      <div class="title">Ayam Goreng</div>
-      <div class="price">Rp 25.000</div>
+    <div class="card-item" v-for="(item, idx) in notes" :key="idx">
+      <div class="time">{{ item.jam }}</div>
+      <div class="title">{{ item.nama }}</div>
+      <div class="price">{{ item.pengeluaran }}</div>
     </div>
 
     <div class="total-price">
       <p>Total</p>
-      <p class="value-price">Rp 544.987</p>
+      <p class="value-price">{{ totalPrice }}</p>
     </div>
   </b-card>
 </template>
@@ -29,7 +18,23 @@
 <script>
 export default {
   name: "CardItem",
-  props: {},
+  props: {
+    id: Number,
+    date: String,
+    total: String,
+    notes: {
+      typeof: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    totalPrice() {
+      let sum = this.notes.reduce((a, b) => {
+        return a + b.pengeluaran;
+      }, 0);
+      return sum;
+    },
+  },
 };
 </script>
 
@@ -65,7 +70,7 @@ export default {
 .total-price {
   display: flex;
   justify-content: flex-end;
-  border-top: 2px solid rgba(128, 128, 128, 0.3);
+  border-top: 1.5px solid rgba(128, 128, 128, 0.3);
   font-weight: bold;
   padding: 15px 10px 0 10px;
   font-size: 14px;

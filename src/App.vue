@@ -5,7 +5,7 @@
       <p class="label">Diari Jajan Bulan Februari</p>
       <p>Pengeluaran bulan ini Rp 5.605.475</p>
 
-      <b-button variant="primary" @click="showModal = !showModal"
+      <b-button variant="primary" @click="handleShowModal"
         >TAMBAH ITEM</b-button
       >
 
@@ -24,7 +24,7 @@
 
         <div class="btn-wrapper">
           <b-button class="cancel-btn" @click="handleCancelAdd">BATAL</b-button>
-          <b-button variant="primary">KIRIM</b-button>
+          <b-button variant="primary" @click="handleAddItem">KIRIM</b-button>
         </div>
       </b-modal>
       <!-- END OF MODAL ADD ITEM -->
@@ -33,11 +33,14 @@
 
     <!-- CONTENT -->
     <div class="content-wrapper">
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
+      <CardItem
+        v-for="value in data"
+        :key="value.id"
+        :id="value.id"
+        :date="value.date"
+        :total="value.total"
+        :notes="value.detail"
+      />
     </div>
     <!--END OF CONTENT -->
   </div>
@@ -45,6 +48,9 @@
 
 <script>
 import CardItem from "./components/CardItem.vue";
+// import { items } from "./data/index"
+import { format } from "date-fns";
+
 export default {
   name: "App",
   components: {
@@ -52,16 +58,70 @@ export default {
   },
   data() {
     return {
+      data: [],
       showModal: false,
       name: "",
       price: null,
     };
   },
+  watch: {
+    // clear all input field when modal is closed
+    showModal() {
+      if (!this.showModal) {
+        this.name = "";
+        this.price = null;
+      }
+    },
+  },
+  mounted() {
+    this.fetchData();
+  },
   methods: {
+    handleShowModal() {
+      this.showModal = !this.showModal;
+      console.log("open");
+    },
     handleCancelAdd() {
       this.showModal = false;
       this.name = "";
       this.price = null;
+    },
+    handleAddItem() {
+      let date = format(new Date(), "dd MMMM yyyy");
+      let time = format(new Date(), "HH:mm");
+      let isExist = this.data.some((item) => item.date === date);
+
+      if (isExist) {
+        let index = this.data.findIndex((item) => item.date === date);
+        this.data[index].detail.push({
+          jam: time,
+          tanggal: date,
+          nama: this.name,
+          pengeluaran: this.price,
+        });
+      } else {
+        // let newData = {
+        //   id: "3sdse2esds",
+        //   date: "15 Februari 2022",
+        //   detail: [
+        //     {
+        //       jam: "05:07",
+        //       tanggal: "12 Februari 2022",
+        //       nama: "Tahu Bulat",
+        //       pengeluaran: 85271,
+        //     },
+        //   ],
+        // };
+        // let copyData = this.data.reverse();
+        // this.data = [...copyData, newData].reverse();
+      }
+    },
+    async fetchData() {
+      let url = "http://localhost:3001/items";
+      let res = await fetch(url);
+      let result = await res.json();
+      console.log("response await", result);
+      this.data = result.reverse();
     },
   },
 };
@@ -109,7 +169,7 @@ export default {
   width: 100%;
   max-width: 1250px;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 1rem;
 }
