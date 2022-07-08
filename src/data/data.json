@@ -88,46 +88,148 @@
     "date": "14 Februari 2022",
     "detail": [
         {
-            "jam": "07:07",
+            "jam": "00:45",
             "tanggal":"14 Februari 2022",
-            "nama":"Kwetiau Rebus",
-            "pengeluaran":27279
+            "nama":"Rendang",
+            "pengeluaran":89928
         },
         {
-            "jam": "08:07",
+            "jam": "02:30",
             "tanggal":"14 Februari 2022",
-            "nama":"Sop Ayam",
-            "pengeluaran":82158
+            "nama":"Otak - otak",
+            "pengeluaran":45962
         },
         {
-            "jam": "09:21",
+            "jam": "13:56",
             "tanggal":"14 Februari 2022",
-            "nama":"Kwetiau Goreng",
-            "pengeluaran":16518
+            "nama":"Soto Ayam",
+            "pengeluaran":22548
         },
         {
-            "jam": "16:36",
+            "jam": "16:03",
             "tanggal":"14 Februari 2022",
-            "nama":"Ketoprak",
-            "pengeluaran":21889
+            "nama":"Serabi",
+            "pengeluaran":56161
         },
         {
-            "jam": "20:23",
+            "jam": "22:02",
             "tanggal":"14 Februari 2022",
-            "nama":"Ayam Tangkap",
-            "pengeluaran":41763
+            "nama":"Wajik",
+            "pengeluaran":68051
+        }
+    ]
+},
+{
+    "id": "4",
+    "date": "15 Februari 2022",
+    "detail": [
+        {
+            "jam": "02:19",
+            "tanggal":"15 Februari 2022",
+            "nama":"Soto Betawi",
+            "pengeluaran":72704
         },
         {
-            "jam": "21:36",
-            "tanggal":"14 Februari 2022",
-            "nama":"Sayur Asem",
-            "pengeluaran":98258
+            "jam": "11:50",
+            "tanggal":"15 Februari 2022",
+            "nama":"Ayam Goreng",
+            "pengeluaran":76935
         },
         {
-            "jam": "22:39",
-            "tanggal":"14 Februari 2022",
-            "nama":"Batagor",
-            "pengeluaran":12695
+            "jam": "13:08",
+            "tanggal":"15 Februari 2022",
+            "nama":"Ayam Goreng",
+            "pengeluaran":85256
+        },
+        {
+            "jam": "17:31",
+            "tanggal":"15 Februari 2022",
+            "nama":"Ayam Goreng",
+            "pengeluaran":98399
+        },
+        {
+            "jam": "18:37",
+            "tanggal":"15 Februari 2022",
+            "nama":"Soto Ayam",
+            "pengeluaran":91727
+        },
+        {
+            "jam": "19:09",
+            "tanggal":"15 Februari 2022",
+            "nama":"Rujak",
+            "pengeluaran":95414
+        },
+        {
+            "jam": "23:16",
+            "tanggal":"15 Februari 2022",
+            "nama":"Seblak",
+            "pengeluaran":68587
+        }
+    ]
+},
+{
+    "id": "5",
+    "date": "16 Februari 2022",
+    "detail": [
+        {
+            "jam": "08:45",
+            "tanggal":"16 Februari 20222",
+            "nama":"Otak-otak",
+            "pengeluaran":11971
+        },
+        {
+            "jam": "14:48",
+            "tanggal":"16 Februari 20222",
+            "nama":"Gado-gado",
+            "pengeluaran":51835
+        },
+        {
+            "jam": "18:16",
+            "tanggal":"16 Februari 20222",
+            "nama":"Klontong",
+            "pengeluaran":24297
+        }
+    ]
+},
+{
+    "id": "6",
+    "date": "17 Februari 2022",
+    "detail": [
+        {
+            "jam": "00:20",
+            "tanggal":"17 Februari 2022",
+            "nama":"Soto Kuning",
+            "pengeluaran":34992
+        },
+        {
+            "jam": "05:59",
+            "tanggal":"17 Februari 2022",
+            "nama":"Ayam Geprek",
+            "pengeluaran":37634
+        },
+        {
+            "jam": "06:13",
+            "tanggal":"17 Februari 2022",
+            "nama":"Cireng",
+            "pengeluaran":13914
+        },
+        {
+            "jam": "09:40",
+            "tanggal":"17 Februari 2022",
+            "nama":"Mie Kocok",
+            "pengeluaran":51178
+        },
+        {
+            "jam": "11:11",
+            "tanggal":"17 Februari 2022",
+            "nama":"Mie Kocok",
+            "pengeluaran":23552
+        },
+        {
+            "jam": "23:02",
+            "tanggal":"17 Februari 2022",
+            "nama":"Klepon",
+            "pengeluaran":82753
         }
     ]
 }

@@ -64,6 +64,7 @@ export default {
   width: 60%;
   font-size: 14px;
   padding-left: 10px;
+  text-transform: capitalize;
 }
 
 .price {

@@ -24,7 +24,12 @@
 
         <div class="btn-wrapper">
           <b-button class="cancel-btn" @click="handleCancelAdd">BATAL</b-button>
-          <b-button variant="primary" @click="handleAddItem">KIRIM</b-button>
+          <b-button
+            variant="primary"
+            @click="handleAddItem"
+            :disabled="!name || !price"
+            >KIRIM</b-button
+          >
         </div>
       </b-modal>
       <!-- END OF MODAL ADD ITEM -->
