@@ -83,9 +83,12 @@ export default {
     this.fetchData();
   },
   methods: {
+    // handle format price to indonesian currency
     formatPrice(value) {
       return "Rp " + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     },
+
+    // total count
     totalCount(data) {
       let result = 0;
       for (let i = 0; i < data.length; i++) {
@@ -95,15 +98,20 @@ export default {
       }
       return result;
     },
+
+    // handle to how modal when button tambah item is clicked
     handleShowModal() {
       this.showModal = !this.showModal;
-      console.log("open");
     },
+
+    // handle to close the modal
     handleCancelAdd() {
       this.showModal = false;
       this.name = "";
       this.price = null;
     },
+
+    // handle to add more data
     handleAddItem() {
       let date = format(new Date(), "dd MMMM yyyy");
       let time = format(new Date(), "HH:mm");
@@ -136,6 +144,8 @@ export default {
       this.total = this.totalCount(this.data);
       this.showModal = false;
     },
+
+    // get data from local server
     async fetchData() {
       let url = "http://localhost:3001/items";
       let res = await fetch(url);
