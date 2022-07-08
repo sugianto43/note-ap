@@ -1,24 +1,12 @@
-# note-app
+Berikut ini merupakan langkah - langkah yang harus dilakukan
+sebelum menjalankan aplikasi ini
 
-## Project setup
-```
-npm install
-```
+1. jalankan perintah 'npm install' untuk menginstall semua
+   module yang digunakan
+2. setelah semua module terinstall jalankan perintah
+   'json-server --watch src/data/data.json --port 3001'
+   untuk mejalankan server secara local
+3. setelah server local berhasil jalan, jalankan perintah
+   'npm run serve'
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+tampilan aplikasi sudah bisa dilihat pada browser
